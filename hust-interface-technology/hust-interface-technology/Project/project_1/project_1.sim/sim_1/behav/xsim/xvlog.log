@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Administrator/Desktop/proj/microphone.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module microphone
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/continex/project_1/project_1.srcs/sim_1/new/tb_microphone.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_microphone
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/continex/project_1/project_1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

@@ -1,0 +1,149 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/64dd/src" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/9426" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/736f" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/ec67/hdl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/BootROM/sw" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/BootROM/dpram64.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/BootROM/wb_mem_wrapper.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/BootROM/bootrom_wrapper.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/SystemController/swervolf_syscon.v" \
+
+sv xil_defaultlib  --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/64dd/src" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/9426" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/736f" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/ec67/hdl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/BootROM/sw" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/SystemController/counter.sv" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/SystemController/delta_counter.sv" \
+
+verilog xil_defaultlib  --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/64dd/src" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/9426" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/736f" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/ec67/hdl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/BootROM/sw" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/SystemController/syscon_wrapper.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart/raminfr.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart/uart_receiver.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart/uart_regs.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart/uart_rfifo.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart/uart_sync_flops.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart/uart_tfifo.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart/uart_top.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart/uart_transmitter.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart/uart_wb.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart/wb_uart_wrapper.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/spi/fifo4.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/spi/simple_spi_top.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/spi/wb_spi_wrapper.v" \
+
+sv xil_defaultlib  --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/64dd/src" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/9426" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/736f" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/ec67/hdl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/BootROM/sw" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/lib/beh_lib.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/dbg/dbg.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/swerv_types.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/dec/dec.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/dec/dec_decode_ctl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/dec/dec_gpr_ctl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/dec/dec_ib_ctl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/dec/dec_tlu_ctl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/dec/dec_trigger.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/dma/dma_ctrl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/exu/exu.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/exu/exu_alu_ctl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/exu/exu_div_ctl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/exu/exu_mul_ctl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/ifu/ifu.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/ifu/ifu_aln_ctl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/ifu/ifu_bp_ctl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/ifu/ifu_compress_ctl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/ifu/ifu_ic_mem.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/ifu/ifu_ifc_ctl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/ifu/ifu_mem_ctl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/lsu/lsu.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/lsu/lsu_addrcheck.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/lsu/lsu_bus_buffer.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/lsu/lsu_bus_intf.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/lsu/lsu_clkdomain.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/lsu/lsu_dccm_ctl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/lsu/lsu_dccm_mem.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/lsu/lsu_ecc.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/lsu/lsu_lsc_ctl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/lsu/lsu_stbuf.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/lsu/lsu_trigger.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/mem.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/lib/mem_lib.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/pic/pic_ctrl.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/swerv.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/swerv_wrapper_dmi.sv" \
+
+verilog xil_defaultlib  --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/64dd/src" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/9426" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/736f" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/ec67/hdl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/BootROM/sw" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/64dd/src/swerv_wrapper_verilog.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ip/swerv_soc_swerv_wrapper_verilog_0_0/sim/swerv_soc_swerv_wrapper_verilog_0_0.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/axi2wb.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/axi_intercon_wr.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/wb_intercon.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/wb_mux.v" \
+
+sv xil_defaultlib  --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/64dd/src" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/9426" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/736f" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/ec67/hdl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/BootROM/sw" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/cf_math_pkg.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/addr_decode.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/axi_pkg.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/axi_atop_filter.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/axi_demux.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/axi_err_slv.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/axi_id_prepend.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/axi_intercon.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/axi_mux.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/axi_xbar.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/counter.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/delta_counter.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/fifo_v3.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/lzc.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/rr_arb_tree.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/spill_register.sv" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/stream_register.sv" \
+
+verilog xil_defaultlib  --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/64dd/src" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/9426" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/736f" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/ec67/hdl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/BootROM/sw" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/9426/axi2wb_intcon_wrapper.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ip/swerv_soc_axi2wb_intcon_wrapper_0_0/sim/swerv_soc_axi2wb_intcon_wrapper_0_0.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/736f/gpio_top.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/736f/wb_gpio_wrapper.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ip/swerv_soc_wb_gpio_wrapper_0_0/sim/swerv_soc_wb_gpio_wrapper_0_0.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ip/swerv_soc_bootrom_wrapper_0_0/sim/swerv_soc_bootrom_wrapper_0_0.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ip/swerv_soc_syscon_wrapper_0_0/sim/swerv_soc_syscon_wrapper_0_0.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ip/swerv_soc_wb_uart_wrapper_0_0/sim/swerv_soc_wb_uart_wrapper_0_0.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ip/swerv_soc_xbar_0/sim/swerv_soc_xbar_0.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/2da8/hdl/PWM_Controller_Int.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/2da8/hdl/PWM_w_Int_v1_0_S00_AXI.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/2da8/hdl/PWM_w_Int_v1_0.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ip/swerv_soc_PWM_w_Int_0_0/sim/swerv_soc_PWM_w_Int_0_0.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ip/swerv_soc_xlconcat_0_0/sim/swerv_soc_xlconcat_0_0.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ip/swerv_soc_wb_spi_wrapper_0_0/sim/swerv_soc_wb_spi_wrapper_0_0.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/sim/swerv_soc.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ipshared/0dcc/sources_1/new/microphone.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ip/swerv_soc_microphone_0_0/sim/swerv_soc_microphone_0_0.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ip/swerv_soc_auto_ds_0/sim/swerv_soc_auto_ds_0.v" \
+"../../../../RVfpgaSoC.ip_user_files/bd/swerv_soc/ip/swerv_soc_auto_pc_0/sim/swerv_soc_auto_pc_0.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/clk_gen_nexys.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/litedram_core.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/litedram_top.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl/serv_alu.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl/serv_bufreg.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl/serv_csr.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl/serv_ctrl.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl/serv_decode.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl/serv_mem_if.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl/serv_rf_if.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl/serv_rf_ram.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl/serv_rf_ram_if.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl/serv_rf_top.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl/serv_shift.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl/serv_state.v" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl/serv_top.v" \
+"../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/hdl/swerv_soc_wrapper.v" \
+
+sv xil_defaultlib  --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/uart" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/64dd/src" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/9426" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/736f" --include "../../../../RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/ec67/hdl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/LiteDRAM/serv_1.0.2/rtl" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src" --include "../../../../../../Xilinx/Vivado/lab_src/rtl_src/BootROM/sw" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/axi_pkg.sv" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/axi_cdc.sv" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/axi_intf.sv" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/binary_to_gray.sv" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/bscan_tap.sv" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/cdc_fifo_gray.sv" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/gray_to_binary.sv" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/spill_register.sv" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/sync.sv" \
+"../../../../../../Xilinx/Vivado/lab_src/rtl_src/rvfpga.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,92 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Mon Nov  4 21:50:57 2024
+| Host         : DESKTOP-4IFTF1Q running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file microphone_control_sets_placed.rpt
+| Design       : microphone
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    14 |
+|    Minimum number of control sets                        |    14 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    15 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    14 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |    11 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     1 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               1 |            1 |
+| No           | No                    | Yes                    |              36 |            9 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |             100 |           39 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+--------------------------------------------------+------------------+------------------+----------------+
+|  Clock Signal  |                   Enable Signal                  | Set/Reset Signal | Slice Load Count | Bel Load Count |
++----------------+--------------------------------------------------+------------------+------------------+----------------+
+|  clk_IBUF_BUFG |                                                  |                  |                1 |              1 |
+|  clk_IBUF_BUFG | PWM_COUNTERS[3].PWM_thresh_counter[3][7]_i_1_n_0 | rst_IBUF         |                2 |              8 |
+|  clk_IBUF_BUFG | PWM_COUNTERS[5].PWM_thresh_counter[5][7]_i_1_n_0 | rst_IBUF         |                4 |              8 |
+|  clk_IBUF_BUFG | PWM_COUNTERS[6].PWM_thresh_counter[6][7]_i_1_n_0 | rst_IBUF         |                3 |              8 |
+|  clk_IBUF_BUFG | PWM_COUNTERS[1].PWM_thresh_counter[1][7]_i_1_n_0 | rst_IBUF         |                3 |              8 |
+|  clk_IBUF_BUFG | PWM_COUNTERS[2].PWM_thresh_counter[2][7]_i_1_n_0 | rst_IBUF         |                4 |              8 |
+|  clk_IBUF_BUFG | PWM_COUNTERS[4].PWM_thresh_counter[4][7]_i_1_n_0 | rst_IBUF         |                3 |              8 |
+|  clk_IBUF_BUFG | PWM_COUNTERS[0].PWM_thresh_counter[0][7]_i_1_n_0 | rst_IBUF         |                3 |              8 |
+|  clk_IBUF_BUFG | PWM_COUNTERS[9].PWM_thresh_counter[9][7]_i_1_n_0 | rst_IBUF         |                3 |              8 |
+|  clk_IBUF_BUFG | PWM_COUNTERS[7].PWM_thresh_counter[7][7]_i_1_n_0 | rst_IBUF         |                4 |              8 |
+|  clk_IBUF_BUFG | PWM_COUNTERS[8].PWM_thresh_counter[8][7]_i_1_n_0 | rst_IBUF         |                3 |              8 |
+|  clk_IBUF_BUFG | led_threshold[9]_i_1_n_0                         | rst_IBUF         |                3 |              8 |
+|  clk_IBUF_BUFG | MIC_CLK_posedge                                  | rst_IBUF         |                4 |             12 |
+|  clk_IBUF_BUFG |                                                  | rst_IBUF         |                9 |             36 |
++----------------+--------------------------------------------------+------------------+------------------+----------------+
+
+
