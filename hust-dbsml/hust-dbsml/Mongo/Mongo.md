@@ -1,15 +1,12 @@
 # Mongo
 
 ```javascript
-启动服务：sudo systemctl start mongod
-重启服务：sudo systemctl restart mongod
-关闭服务：sudo systemctl stop mongod
-
-首先启动mongod服务：
 sudo systemctl start mongod
-然后执行mongo即可启动mongodb
+sudo systemctl stop mongod
+sudo systemctl start mongod
 
-db.user.findOne();
+mongo
+
 
 1.
 
@@ -18,32 +15,32 @@ db.business.find().skip(5).limit(5).pretty()
 2.
 
 db.business.find({
-    state:"CA",
-    "attributes.BikeParking": 'True'
+    state:"CA",//条件1
+    "attributes.BikeParking": 'True'//条件2
 }).limit(5).pretty()
 
 3.
 
 db.review.find(
-    { useful: { $gt: 500 } },  // 查询条件
-    { business_id: 1, user_id: 1, useful: 1, _id: 1 }  // 返回指定字段
+    { useful: { $gt: 500 } },  // 条件>500
+    { business_id: 1, user_id: 1, useful: 1, _id: 1 }  // 返回字段通过{}指定
 ).limit(10).pretty()
 
 4.
 
 db.user.find(
-    { useful: { $in: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100] } },  // 查询条件
-    { name: 1, useful: 1, _id: 1 }  // 返回指定字段
+    { useful: { $in: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100] } },  // 查询属于关系
+    { name: 1, useful: 1, _id: 1 }  // 返回'xxxx'.'xxxx','xxx'三个字段
 ).limit(20).pretty()
 
 5.
 
 db.user.find(
     { 
-        fans: { $gte: 100, $lt: 200 },  // 查询条件：100 <= fans < 200
-        useful: { $gte: 1000 }           // 查询条件：useful >= 1000
+        fans: { $gte: 100, $lt: 200 },  // 100 <=< 200
+        useful: { $gte: 1000 }          // >= 1000
     },
-    { name: 1, fans: 1, useful: 1, _id: 1 }  // 返回指定字段
+    { name: 1, fans: 1, useful: 1, _id: 1 }  // 指定四个字段
 ).limit(10).pretty()
 
 6.
@@ -51,24 +48,27 @@ db.user.find(
 db.business.find().count()
 db.business.find().explain("executionStats")
 
+//来自AI：查询`business`集合的执行计划，`executionStats`模式提供了关于查询执行的详细统计信息，包括查询执行时间、扫描文档数量、使用的索引等，帮助了解 MongoDB 如何执行查询操作以及如何优化查询性能。
+
 7.
 
 db.business.find({
-    city: { $in: ["Westlake", "Las Vegas"] }
+    city: { $in: ["Westlake", "Las Vegas"] }//满足两个属性一个“或”
 }).limit(5).pretty()
 
 8.
 
 db.business.find({
-    $expr: { $eq: [{ $size: "$categories" }, 5] }
+    $expr: { $eq: [{ $size: "$categories" }, 5] } //键值==5
 }, 
     {
         name: 1,
         categories: 1,
         stars: 1
-    }
+    }//返回的键值要求
 ).limit(10).pretty()
-//$expr可以构建查询表达式，以比较$match阶段中同一文档中的字段
+
+//来自AI:$expr可以构建查询表达式，以比较$match阶段中同一文档中的字段
 
 9.
 
@@ -78,167 +78,166 @@ db.business.createIndex({ business_id: 1 })
 
 db.business.find({ business_id: "5JucpCfHZltJh5r1JabjDg" }).explain("executionStats")
 
-//查找索引
+
+//来自AI:
+//查找
 db.business.getIndexes()
-//删除索引
+//删
 db.business.dropIndex("indexName")
 
 
-//建立索引以使用索引扫描替代全文扫描
+//在未创建索引时，会进行全集合扫描，有了索引，查询应该使用索引扫描，会少很多文档。
 
 10.
 
-db.business.aggregate([
+db.business.aggregate([    //聚合操作
     {
         $group: {
-            _id: "$state",          // 按州分组
-            count: { $sum: 1 }     // 统计每个州的商店数量
+            _id: "$state",          
+            count: { $sum: 1 }     
         }
     },
     {
-        $project: {                 //重塑
-            _id: 0,                 // 不返回 _id 字段
+        $project: {                
+            _id: 0,                 
             state: "$_id",
             cnt: "$count"          
         }
     },
     {
-        $sort: { cnt: -1 }        // 按照 cnt 字段降序排序
+        $sort: { cnt: -1 }//按cnt降序排序
     }
 ])
 
+//前一个{}用来指定分组聚合来源，这里是 state 然后要用这个表示方法计算count
+//后面的{}用来形成聚合结构，
+//`$project`阶段重塑结果，不懂AI教的，这里可以重命名键值
+
 11.
-
-//聚合生成Subreview
-db.Subreview.drop(); //删除旧db
-
+//存到Subreview
 db.review.aggregate([
     { $limit: 500000 },
     { $out: "Subreview" }
 ]);
 
-//创建全文索引
 db.Subreview.createIndex({ text: "text" });//文本索引
 
-//创建升序索引
-db.Subreview.createIndex({ useful: 1 });
+db.Subreview.createIndex({ useful: 1 });//1升序
 
-//查询
 var results = db.Subreview.find(
     { $text: { $search: "delicious" }, useful: { $gte: 50 } }
 ).limit(5);
 
-// 打印查询结果
 results.forEach(printjson);
+
+//find用两个操作符能够查询+筛选出键值》50+delicous
 
 12.
 
 db.Subreview.aggregate([
     {
-        $match: { useful: { $gt: 50 } } // 过滤出 useful 大于 50 的评论
+        $match: { useful: { $gt: 50 } } //$match匹配操作符
     },
     {
-        $group: {
-            _id: "$business_id", // 按照 business_id 分组
-            average_stars: { $avg: "$stars" } // 计算平均打星
+        $group: {//分组操作符
+            _id: "$business_id", 
+            average_stars: { $avg: "$stars" } //平均值计算 $avg
         }
     },
     {
-        $sort: { _id: 1 } // 按照 business_id 排序
+        $sort: { _id: 1 }
     },
     {
         $limit: 20 // 限制返回 20 条记录
     },
     {
-        $project: {
-            business_id: "$_id", // 重命名字段为 business_id
-            average_stars: 1, // 保留平均打星字段
-            _id: 0 // 不返回默认的 _id 字段
+        $project: {//
+            business_id: "$_id", 
+            average_stars: 1, 
+            _id: 0 //不显示_id， AI教的
         }
     }
 ]);
 
+//各个阶段干不同的事情，我们都有美好的未来
+
 13.
 
-//建立地址索引
+//这里AI误导我好久，我逃他猴子，loc字段自己建立索引，我以为本身就有，这样就可以用地理空间查询
 db.business.createIndex({ loc: "2dsphere" });
 
-//清空现有变量
-let targetBusiness;
-
+let targetBusiness;//还能有变量真想不到，真无敌了孩子
 //寻找目标商家
 targetBusiness = db.business.findOne({ business_id: "smkZUv_IeYYj_BA6-Po7oQ" });
 
-//检查目标商家是否存在
 if (!targetBusiness) {
     print("Target business not found");
 } else {
-    //获取坐标
-    let targetCoordinates = targetBusiness.loc.coordinates;
-
-    //targetCoordinates 已经成功获取
-    //printjson(targetCoordinates);
-
-    //查询距离目标商家 2 公里以内的商家
+	
+    let targetCoordinates = targetBusiness.loc.coordinate
+	
     db.business.find({
-        loc: {  $nearSphere: {//指定地理空间查询要按从最近到最远的顺序为其返回文档的点
+        loc: {  
+			$nearSphere: {
                 $geometry: {
                     type: "Point",
                     coordinates: targetCoordinates
                 },
-                $maxDistance: 2000 // 2公里
+                $maxDistance: 2000 //这里指定距离
             }
         }
     }, {
-        _id: 0, // 不返回 _id 字段
+        _id: 0,
         name: 1,
         address: 1,
         stars: 1
-    }).sort({ stars: -1 }).limit(20).forEach(printjson);//迭代游标以将printjson应用到游标处的每个文档
+    }).sort({ stars: -1 }).limit(20).forEach(printjson);
 }
+
+//AI:`$nearSphere`操作符查找距离目标商家坐标（`targetCoordinates`）2 公里以内的商家文档
 
 14.
 
-//建立date索引
-db.Subreview.createIndex({ date: 1 });
+db.Subreview.createIndex({ date: 1 });//1升序索引
 
-//聚合查询
 db.Subreview.aggregate([
     {
         $match: {
-            date: { $gte: "2000-01-01" } // 过滤出 2000 年以后的评价
+            date: { $gte: "2000-01-01" } //日期也能大小比较真是无敌了
         }
     },
     {
         $group: {
-            _id: "$user_id", // 按用户 ID 分组
-            total: { $sum: 1 } // 统计每个用户的评价总数
+            _id: "$user_id", 
+            total: { $sum: 1 } 
         }
     },
     {
-        $sort: { total: -1 } // 按评价总数降序排序
+        $sort: { total: -1 } //评价总数降序
     },
     {
-        $limit: 20 // 限制返回前 20 条结果
+        $limit: 20
     },
     {
         $project: {
-            user_id: "$_id", // 显示用户 ID
-            total: 1, // 显示评价总数
-            _id: 0 // 不显示默认的 _id 字段
+            user_id: "$_id", 
+            total: 1, 
+            _id: 0 
         }
     }
 ]);
 
 15.
 
-//Map函数
+//Map函数，这个夸张，纯’js‘内容，无敌了
 var mapfunc = function() {
-    emit(this.business_id, {//返回中间键值对
+    emit(this.business_id, {
         count: 1,
         sum_stars: this.stars
     });
+    //这里和很多js,java,kotlin写法一样，传入的父元素可以用"this"表示
 };
+//AI:`emit`函数用于输出一个键值对
 
 //Reduce函数
 var reducefunc = function(key, values) {
@@ -246,17 +245,16 @@ var reducefunc = function(key, values) {
     values.forEach(function(value) {
         result.count += value.count;
         result.sum_stars += value.sum_stars;
-    });
+    });//类似于for循环，这里应该是对应数据流的感觉，处理完最后返回平均值，欸也不是，就是result这一个类，或者叫object
     result.avg_stars = result.sum_stars / result.count;
     return result;
 };
 
-//执行MapReduce
+//MapReduce应用两个函数
 db.Subreview.mapReduce(
     mapfunc,
     reducefunc,
-    {out: "Map_Reduce"}
+    {out: "Map_Reduce"}//输出到新的集合
 );
 
-//查询
 db.Map_Reduce.find().limit(20).pretty();

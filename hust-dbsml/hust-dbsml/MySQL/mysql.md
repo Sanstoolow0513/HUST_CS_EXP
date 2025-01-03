@@ -16,6 +16,10 @@ ORDER BY
     JSON_UNQUOTE(JSON_EXTRACT(business_info, '$.stars')) DESC
 LIMIT 5;
 
+//JSON_EXTRACT提取info字段的值筛选出CA的记录
+//使用JSON_UNQUOTE和JSON_EXTRACT提取stars字段的值用于排序
+//limit限制返回结果数
+
 2.
 
 SELECT 
@@ -26,6 +30,9 @@ FROM
 WHERE 
     JSON_UNQUOTE(JSON_EXTRACT(business_info, '$.city')) = 'Edmonton'
 LIMIT 5;
+
+//JSON_KEY获取其键
+//解释类似上问
 
 3.
 
@@ -42,9 +49,11 @@ FROM
     business
 LIMIT 5;
 
+JSON_EXTRACT提取三个字段的值，最后type限制返回类型
+
 4.
 
-SELECT 
+SELECT //筛选
     JSON_UNQUOTE(JSON_EXTRACT(business_info, '$.name')) AS name,
     JSON_EXTRACT(business_info, '$.city') AS city,
     JSON_EXTRACT(business_info, '$.stars') AS stars,
@@ -59,13 +68,15 @@ ORDER BY
     JSON_UNQUOTE(JSON_EXTRACT(business_info, '$.stars')) DESC
 LIMIT 20;
 
+JSON_UNQUOTE去引号
+
 5.
 
 EXPLAIN FORMAT = JSON
 SELECT * FROM user
 WHERE JSON_EXTRACT(user_info, '$.cool') > 200;
 
-结果如下：
+结果：
 ![alt text](image-1.png)
 {
   "query_block": {
@@ -93,15 +104,16 @@ WHERE JSON_EXTRACT(user_info, '$.cool') > 200;
     }
   }
 }
-运行完后：26981 rows in set (32.91 sec)
+运行完后：26981 rows in set (32.99 sec)
+
+CREATE 
+	INDEX idx_user_info_cool 
+ON 
+	user (CAST(JSON_UNQUOTE(JSON_EXTRACT(user_info, '$.cool')) AS UNSIGNED));
+	
+再次执行查询，对比加索引前后的查询效率加索引后查询效率应显著提高
 
 
-
-mongodb:
-db.user.find({ "cool": { $gt: 200 } });
-db.user.find({ "cool": { $gt: 200 } }).explain("executionStats");
-
-(b)
 6.
 修改前查询：
 SELECT JSON_PRETTY(business_info) AS original_info
@@ -147,9 +159,14 @@ SET business_info = JSON_SET(
 )
 WHERE business_id = '--eBbs3HpZYIym5pEw8Qdw';
 
+//更新info列，再添加键值对BikeParking，修改两个值
+
+
 SELECT JSON_PRETTY(business_info) AS pretty_business_info
 FROM business
 WHERE business_id = '--eBbs3HpZYIym5pEw8Qdw';
+
+//再次查询,
 
 7.
 
@@ -157,7 +174,7 @@ SELECT JSON_PRETTY(user_info)
 FROM user
 WHERE user_id = '--agAy0vRYwG6WqbInorfg';
 
-插入新记录
+插入记录
 INSERT INTO user (user_id, user_info)
 SELECT 'change', user_info
 FROM user
@@ -168,7 +185,7 @@ UPDATE user
 SET user_info = JSON_REMOVE(user_info, '$.fans', '$.useful')
 WHERE user_id = 'change';
 
-添加 city 键值对
+添加 city 键值对 = New York
 UPDATE user
 SET user_info = JSON_SET(user_info, '$.city', 'New York')
 WHERE user_id = 'change';
@@ -199,6 +216,8 @@ GROUP BY
 ORDER BY
     b.state ASC;
 
+按city state 分组，计算没一个城市出现次数，每个州内的城市及其出现次数聚合为一个 JSON 对象，两个key值。
+
 9.
 
 SELECT
@@ -208,13 +227,14 @@ SELECT
             'date', JSON_UNQUOTE(JSON_EXTRACT(tip_info, '$.date')),
             'text', JSON_UNQUOTE(JSON_EXTRACT(tip_info, '$.text')),
             'compliment_count', JSON_UNQUOTE(JSON_EXTRACT(tip_info, '$.compliment_count'))
-        )
+        )//去引号
     ) AS tips
 FROM
     tip
 GROUP BY
     user_id
 LIMIT 5;
+和上一问一样，选择tip表中id字段，将三个字段组合成JSON对象，最后按id分组
 
 10.
 
@@ -239,8 +259,11 @@ ORDER BY
     name ASC
 LIMIT 10;
 
-11.
+提取四个字段，筛选出值'Edmonton'，JSON_OVERLAPS判断属性是否为条件中的任意一个，比较两个 JSON 对象
+第一个 JSON 对象包含指定的条件，第二个 JSON 对象是从商户记录中提取的实际属性值，两个对象有共同的键值对，则表示商户满足条件中的任意一个
 
+11.
+//无符号整数类型
 SELECT
     JSON_UNQUOTE(JSON_EXTRACT(user_info, '$.name')) AS name,
     CAST(JSON_UNQUOTE(JSON_EXTRACT(user_info, '$.funny')) AS UNSIGNED) AS funny,
@@ -255,12 +278,13 @@ SELECT
             CAST(JSON_UNQUOTE(JSON_EXTRACT(user_info, '$.useful')) AS UNSIGNED) +
             CAST(JSON_UNQUOTE(JSON_EXTRACT(user_info, '$.cool')) AS UNSIGNED)
             AS DECIMAL(10, 1)
+            //结果转换为DECIMAL(10, 1)类型
         )
     ) AS '[funny, useful, cool, sum]'
 FROM
     user
 WHERE
-    CAST(JSON_UNQUOTE(JSON_EXTRACT(user_info, '$.useful')) AS UNSIGNED) > 1000
+    CAST(JSON_UNQUOTE(JSON_EXTRACT(user_info, '$.useful')) AS UNSIGNED) > 1000//筛选出几率大于1000的记录
 LIMIT 10;
 
 12.
@@ -268,10 +292,13 @@ LIMIT 10;
 SELECT 
     JSON_PRETTY(
         JSON_MERGE_PRESERVE(
+	        //子查询+格式化
             (SELECT JSON_UNQUOTE(business_info) FROM business WHERE business_id = '-1b2kNOowsPrPpBOK4lNkQ'),
             (SELECT JSON_UNQUOTE(user_info) FROM user WHERE user_id = '--7XOV5T9yZR5w1DIy_Dog')
         )
     ) AS merged_info;
+    
+//JSON_MERGE_PRESERVE函数将两个 JSON 文档合并为一个，保留相同键值对中的两个值
 
 13.
 
@@ -294,11 +321,10 @@ JOIN JSON_TABLE(
     )
 ) AS attr ON true
 ORDER BY business_name ASC;
-1. 内层查询执行：首先，`business`表中的数据按`review_count`降序排序，并返回前三条记录的`business_info`字段。返回结果是一个包含`business_info`字段的结果集。
-2. `JSON_TABLE`展开：然后，`JSON_TABLE`函数处理这些`business_info`字段，将其中的`attributes`字段展开成表格形式。每个属性变成单独的行，并且`attribute_value`字段提取属性值。
-3. 外层查询：接着，外层查询处理这些展开的数据：
-   - 提取`business_name`和`HasTV`属性。
-   - 计算每个业务的属性值行号（`ROW_NUMBER()`），按`attribute_value`排序。
-   - 返回每条记录的`attribute_value`。
-4. 排序：最后，结果按`business_name`进行升序排序。
+
+//应该是一个名为attribute_value的列，这里指定了类型，然后给定了值在哪里
+//JSON_TABLE函数字段展开为表格
+//窗口函数ROW_NUMBER()为属性行分配编号
+//
+
 ```

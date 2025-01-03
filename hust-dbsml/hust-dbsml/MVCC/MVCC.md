@@ -1,4 +1,3 @@
-## MySql
 ```sql
 在MySQL中，首先创建一个数据库testdb
 
