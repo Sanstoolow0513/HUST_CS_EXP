@@ -213,22 +213,15 @@ DROP INDEX index_name//删索引
 
 MATCH (user1:UserNode {userid: '4i4lyXBigT2HShIjw7TbDw'})-[:Review]->(r1:ReviewNode)-[:Reviewed]->(b:BusinessNode)
 MATCH (user2:UserNode)-[:Review]->(r2:ReviewNode)-[:Reviewed]->(b)
-WHERE NOT (user1)-[:HasFriend]->(user2) AND user1 <> user2  //AI：：条件确保找到的`user2`与`user1`不是朋友关系且不是`user1`本身
+WHERE NOT (user1)-[:HasFriend]->(user2) AND user1 <> user2  
 WITH user1.name AS user1_name, user2.name AS user2_name, COUNT(DISTINCT b) AS sum
 ORDER BY sum DESC
 LIMIT 10
 RETURN user1_name, user2_name, sum
 //Started streaming 10 records after 2 ms and completed after 18101 ms.
-//AI：WHERE NOT (user1)-[:HasFriend]->(user2) AND user1 <> user2：条件确保找到的`user2`与`user1`不是朋友关系且不是`user1`本身
-
-
 //索引
 CREATE INDEX FOR (u:UserNode) ON (u.userid);
 //Added 1 index, completed after 41 ms.
-
-
-
-
 PROFILE
 MATCH (user1:UserNode {userid: '4i4lyXBigT2HShIjw7TbDw'})-[:Review]->(r1:ReviewNode)-[:Reviewed]->(b:BusinessNode)
 MATCH (user2:UserNode)-[:Review]->(r2:ReviewNode)-[:Reviewed]->(b)
