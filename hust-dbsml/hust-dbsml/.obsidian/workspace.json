@@ -77,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "95700eeb37c696f8",
@@ -165,25 +164,38 @@
   },
   "active": "626405f1a43e60d7",
   "lastOpenFiles": [
+    "代码等/交互应用/exp4.md",
+    "代码等/Neo4j/Neo4j.md",
+    "代码等/Neo4j/3-10.md",
+    "代码等/MySQL/mysql.md",
+    "代码等/MySQL/image.png",
+    "代码等/MySQL/image-1.png",
+    "代码等/MVCC/MVCC.md",
+    "代码等/Mongo/Mongo.md",
+    "代码等/交互应用",
+    "代码等/Neo4j",
+    "代码等/MySQL",
+    "代码等/MVCC",
+    "代码等/Mongo",
+    "代码等/export.csv",
+    "代码等",
+    "大数据管理概论实验发布/~WRL0447.tmp",
+    "大数据管理概论实验发布/~WRD0435.tmp",
+    "大数据管理概论实验发布/~WRL3801.tmp",
     "Mongo/Mongo.md",
     "MySQL/mysql.md",
     "Neo4j/Neo4j.md",
-    "大数据管理概论实验发布/~$24-大数据管理-任务书-定稿.docx",
     "plan (1).png",
     "Neo4j/3-10.md",
     "MySQL/image.png",
     "MySQL/image-1.png",
     "MVCC/MVCC.md",
-    "大数据管理概论实验发布/Navicat配置使用.pdf",
     "i/1_6_2.jpg",
     "i/1_5.jpg",
     "i/1_3.jpg",
     "i/1_2.jpg",
     "i/1_1.jpg",
-    "i/2-4.jpg",
-    "i/2-6t.jpg",
     "交互应用/exp4.md",
-    "README.md",
-    "大数据管理概论实验发布/~$24-大数据管理-华为平台部署手册-定稿.docx"
+    "README.md"
   ]
 }
