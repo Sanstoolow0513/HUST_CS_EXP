@@ -1,0 +1,69 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Thu Dec 19 18:49:33 2024
+| Host         : DESKTOP-KBVQ20U running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'swerv_soc_my_voice_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of swerv_soc_my_voice_0_0 from xilinx.com:user:my_voice:1.0 (Rev. 2) to xilinx.com:user:my_voice:2.0 (Rev. 1)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Thu Dec 19 18:19:52 2024
+| Host         : DESKTOP-KBVQ20U running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'swerv_soc_my_mic_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of swerv_soc_my_mic_0_0 from xilinx.com:user:my_mic:2.0 (Rev. 1) to xilinx.com:user:my_mic:2.1 (Rev. 1)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'swerv_soc_my_mic_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'enable'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Wed Dec 18 18:19:47 2024
+| Host         : DESKTOP-KBVQ20U running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'swerv_soc_my_mic_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of swerv_soc_my_mic_0_0 from xilinx.com:user:my_mic:1.1 (Rev. 1) to xilinx.com:user:my_mic:2.0 (Rev. 1)
+

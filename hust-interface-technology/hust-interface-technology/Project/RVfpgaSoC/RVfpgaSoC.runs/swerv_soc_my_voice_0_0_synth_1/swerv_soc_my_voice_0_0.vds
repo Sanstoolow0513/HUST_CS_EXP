@@ -1,0 +1,391 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Dec 19 18:49:41 2024
+# Process ID: 18176
+# Current directory: C:/continex/RVfpgaSoC/RVfpgaSoC.runs/swerv_soc_my_voice_0_0_synth_1
+# Command line: vivado.exe -log swerv_soc_my_voice_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source swerv_soc_my_voice_0_0.tcl
+# Log file: C:/continex/RVfpgaSoC/RVfpgaSoC.runs/swerv_soc_my_voice_0_0_synth_1/swerv_soc_my_voice_0_0.vds
+# Journal file: C:/continex/RVfpgaSoC/RVfpgaSoC.runs/swerv_soc_my_voice_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source swerv_soc_my_voice_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/continex/ip_repo/my_voice_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/continex/ip_repo/my_mic_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/continex/ip_repo/mircophone_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/continex/microphone'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Xilinx/Vivado/lab_src/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+Command: synth_design -top swerv_soc_my_voice_0_0 -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 22360 
+WARNING: [Synth 8-2611] redeclaration of ansi port slv_reg0 is not allowed [c:/continex/RVfpgaSoC/RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/68fa/hdl/my_voice_v1_0_S00_AXI.v:107]
+WARNING: [Synth 8-976] slv_reg0 has already been declared [c:/continex/RVfpgaSoC/RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/68fa/hdl/my_voice_v1_0_S00_AXI.v:107]
+WARNING: [Synth 8-2654] second declaration of slv_reg0 ignored [c:/continex/RVfpgaSoC/RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/68fa/hdl/my_voice_v1_0_S00_AXI.v:107]
+INFO: [Synth 8-994] slv_reg0 is declared here [c:/continex/RVfpgaSoC/RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/68fa/hdl/my_voice_v1_0_S00_AXI.v:18]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 835.676 ; gain = 241.781
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'swerv_soc_my_voice_0_0' [c:/continex/RVfpgaSoC/RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ip/swerv_soc_my_voice_0_0/synth/swerv_soc_my_voice_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'my_voice_v1_0' [c:/continex/RVfpgaSoC/RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/68fa/hdl/my_voice_v1_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'my_voice_v1_0_S00_AXI' [c:/continex/RVfpgaSoC/RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/68fa/hdl/my_voice_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 1 - type: integer 
+INFO: [Synth 8-226] default block is never used [c:/continex/RVfpgaSoC/RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/68fa/hdl/my_voice_v1_0_S00_AXI.v:231]
+INFO: [Synth 8-226] default block is never used [c:/continex/RVfpgaSoC/RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/68fa/hdl/my_voice_v1_0_S00_AXI.v:372]
+INFO: [Synth 8-6155] done synthesizing module 'my_voice_v1_0_S00_AXI' (1#1) [c:/continex/RVfpgaSoC/RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/68fa/hdl/my_voice_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6157] synthesizing module 'my_voice_controller' [c:/continex/RVfpgaSoC/RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/68fa/hdl/my_voice_controller.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'my_voice_controller' (2#1) [c:/continex/RVfpgaSoC/RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/68fa/hdl/my_voice_controller.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'my_voice_v1_0' (3#1) [c:/continex/RVfpgaSoC/RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ipshared/68fa/hdl/my_voice_v1_0.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'swerv_soc_my_voice_0_0' (4#1) [c:/continex/RVfpgaSoC/RVfpgaSoC.srcs/sources_1/bd/swerv_soc/ip/swerv_soc_my_voice_0_0/synth/swerv_soc_my_voice_0_0.v:57]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[31]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[30]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[29]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[28]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[27]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[26]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[25]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[24]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[23]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[22]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[21]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[20]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[19]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[18]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[17]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[16]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[15]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[14]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[13]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[12]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[11]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[10]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[9]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[8]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[7]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[6]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[5]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[4]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[3]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[2]
+WARNING: [Synth 8-3331] design my_voice_controller has unconnected port enable[1]
+WARNING: [Synth 8-3331] design my_voice_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design my_voice_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design my_voice_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design my_voice_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design my_voice_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design my_voice_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 883.590 ; gain = 289.695
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 896.691 ; gain = 302.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 896.691 ; gain = 302.797
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 896.691 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1008.797 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 1010.414 ; gain = 1.617
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5587] ROM size for "cnt_top" is below threshold of ROM address width. It will be mapped to LUTs
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 5     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 5     
+	   2 Input     18 Bit        Muxes := 1     
+	  14 Input     18 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module my_voice_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 5     
+Module my_voice_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 1     
+	  14 Input     18 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design swerv_soc_my_voice_0_0 has unconnected port s00_axi_awprot[2]
+WARNING: [Synth 8-3331] design swerv_soc_my_voice_0_0 has unconnected port s00_axi_awprot[1]
+WARNING: [Synth 8-3331] design swerv_soc_my_voice_0_0 has unconnected port s00_axi_awprot[0]
+WARNING: [Synth 8-3331] design swerv_soc_my_voice_0_0 has unconnected port s00_axi_arprot[2]
+WARNING: [Synth 8-3331] design swerv_soc_my_voice_0_0 has unconnected port s00_axi_arprot[1]
+WARNING: [Synth 8-3331] design swerv_soc_my_voice_0_0 has unconnected port s00_axi_arprot[0]
+INFO: [Synth 8-3886] merging instance 'inst/my_voice_controller/state_reg[6]' (FDC) to 'inst/my_voice_controller/state_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/my_voice_controller/state_reg[5]' (FDC) to 'inst/my_voice_controller/state_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/my_voice_controller/state_reg[4] )
+INFO: [Synth 8-3886] merging instance 'inst/my_voice_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'inst/my_voice_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/my_voice_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/my_voice_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'inst/my_voice_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/my_voice_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    20|
+|2     |LUT1   |     5|
+|3     |LUT2   |    33|
+|4     |LUT3   |    12|
+|5     |LUT4   |    62|
+|6     |LUT6   |    54|
+|7     |FDCE   |    32|
+|8     |FDRE   |   169|
+|9     |FDSE   |     1|
++------+-------+------+
+
+Report Instance Areas: 
++------+-------------------------------+----------------------+------+
+|      |Instance                       |Module                |Cells |
++------+-------------------------------+----------------------+------+
+|1     |top                            |                      |   388|
+|2     |  inst                         |my_voice_v1_0         |   388|
+|3     |    my_voice_controller        |my_voice_controller   |   157|
+|4     |    my_voice_v1_0_S00_AXI_inst |my_voice_v1_0_S00_AXI |   231|
++------+-------------------------------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1010.414 ; gain = 416.520
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 1010.414 ; gain = 302.797
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1010.414 ; gain = 416.520
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1010.414 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1013.848 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+37 Infos, 47 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1013.848 ; gain = 710.379
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1013.848 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/continex/RVfpgaSoC/RVfpgaSoC.runs/swerv_soc_my_voice_0_0_synth_1/swerv_soc_my_voice_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP swerv_soc_my_voice_0_0, cache-ID = cd646988c7cdf2ae
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1013.848 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/continex/RVfpgaSoC/RVfpgaSoC.runs/swerv_soc_my_voice_0_0_synth_1/swerv_soc_my_voice_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file swerv_soc_my_voice_0_0_utilization_synth.rpt -pb swerv_soc_my_voice_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 19 18:50:05 2024...
